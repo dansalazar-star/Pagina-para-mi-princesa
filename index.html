@@ -1,42 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Para mi princesa</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Un mensaje para ti</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#ff6b6b;--muted:#98a0b3}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#071022 0%, #0f1724 60%);color:#e6eef8}
+    .wrap{min-height:100%;display:flex;align-items:center;justify-content:center;padding:32px}
+    .card{width:100%;max-width:820px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));border-radius:18px;padding:28px;box-shadow:0 10px 30px rgba(2,6,23,0.6);backdrop-filter: blur(6px);border:1px solid rgba(255,255,255,0.04)}
+    header{display:flex;gap:16px;align-items:center}
+    .avatar{width:92px;height:92px;border-radius:14px;overflow:hidden;flex-shrink:0;border:1px solid rgba(255,255,255,0.04)}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    h1{font-size:1.6rem;margin:0}
+    p.lead{color:var(--muted);margin:8px 0 18px}
+    .message{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));padding:18px;border-radius:12px;margin-bottom:18px;border:1px solid rgba(255,255,255,0.02)}
+    .controls{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{padding:12px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
+    .btn-yes{background:linear-gradient(90deg,var(--accent),#ff8b8b);color:#071022}
+    .btn-maybe{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#e6eef8}
+    .btn-no{background:transparent;color:#e6eef8;border:1px dashed rgba(255,255,255,0.06)}
+    footer{margin-top:18px;color:var(--muted);font-size:0.9rem;text-align:center}
+    .small{font-size:0.90rem;color:var(--muted)}
+    @media (max-width:520px){.avatar{width:72px;height:72px}.card{padding:18px}}
+  </style>
 </head>
-<body class="bg-gray-900 flex items-center justify-center min-h-screen p-4">
-  <div class="bg-gray-800 text-white rounded-2xl shadow-xl p-6 max-w-lg w-full">
-    
-    <!-- FOTO DE USTEDES -->
-    <img src="nosotros.png" alt="Nosotros" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-pink-400">
+<body>
+  <div class="wrap">
+    <main class="card" role="main">
+      <header>
+        <div class="avatar">
+          <!-- Foto de ustedes (sube el archivo como nosotros.png) -->
+          <img src="nosotros.png" alt="Nosotros" />
+        </div>
+        <div>
+          <h1>Hola princesa 💖</h1>
+          <p class="lead">Tómate tu tiempo para leer esto. No hay presión; solo quiero hablarte desde el corazón.</p>
+        </div>
+      </header>
 
-    <h1 class="text-2xl font-bold text-center mb-2">Hola, quiero hablar desde el corazón</h1>
-    <p class="text-center text-gray-400 mb-6">Tómate tu tiempo para leer esto. No hay presión; solo quiero ser claro y honesto.</p>
+      <section class="message">
+        <p>Hola princesa,</p>
+        <p>He estado pensando mucho y me di cuenta de cuánto significas para mí. No quiero estar con nadie más, solo contigo. Quiero estar bien a tu lado y darte lo mejor de mí.</p>
+        <p>Por eso quiero invitarte a dos momentos especiales:</p>
+        <ul>
+          <li>💌 <strong>Sabado 20 de septiembre:</strong> una cita conmigo.</li>
+          <li>🍷 <strong>Jueves en la noche:</strong> una cena romántica solo para nosotros dos.</li>
+        </ul>
+        <p>Ojalá aceptes compartirlos conmigo ❤️</p>
+        <p class="small">Con todo mi cariño, <strong>Daniel Salazar<br>Tu niño</strong></p>
+      </section>
 
-    <div class="bg-gray-700 rounded-xl p-4 mb-6">
-      <p class="mb-3">Hola Princesa,</p>
-      <p class="mb-3">He estado pensando mucho y me di cuenta de cuánto significas para mí. No quiero estar con nadie más, solo contigo. Quiero estar bien a tu lado como te lo he venido mencionando todo este tiempo y darte lo mejor de mí.</p>
+      <div class="controls">
+        <!-- Botón WhatsApp (sí acepto) -->
+        <button class="btn btn-yes" 
+          onclick="window.location.href='https://wa.me/573175103342?text=S%C3%AD%20acepto%20la%20cita%20del%2020%20de%20septiembre%20y%20la%20cena%20rom%C3%A1ntica%20contigo%20❤️'">
+          Sí, acepto
+        </button>
 
-      <p class="mb-2">Por eso quiero invitarte a dos momentos especiales:</p>
-      <ul class="list-disc list-inside mb-3">
-        <li>💌 <b>Sabado 20 de septiembre:</b> una cita conmigo.</li>
-        <li>🍷 <b>Jueves en la noche:</b> una cena romántica para los dos.</li>
-      </ul>
+        <!-- Botón WhatsApp (necesito tiempo) -->
+        <button class="btn btn-maybe" 
+          onclick="window.location.href='https://wa.me/573175103342?text=Necesito%20un%20poco%20de%20tiempo%20para%20pensarlo%20💙'">
+          Necesito tiempo
+        </button>
 
-      <p>Ojalá aceptes compartirlos conmigo ❤️</p>
-    </div>
+        <!-- Botón WhatsApp (no, gracias) -->
+        <button class="btn btn-no" 
+          onclick="window.location.href='https://wa.me/573175103342?text=Prefiero%20no%20aceptar%2C%20pero%20gracias%20por%20el%20detalle'">
+          No, gracias
+        </button>
+      </div>
 
-    <p class="text-right mb-6">Con cariño, <b>Daniel Salazar, Tu niño</b></p>
-
-    <div class="flex justify-center gap-3">
-      <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg">Sí, acepto</button>
-      <button class="bg-gray-600 hover:bg-gray-700 px-4 py-2 rounded-lg">Necesito tiempo</button>
-      <button class="bg-gray-800 border border-gray-600 hover:bg-gray-700 px-4 py-2 rounded-lg">No, gracias</button>
-    </div>
-
-    <p class="text-center text-gray-400 mt-6 text-sm">Sea cual sea tu respuesta, la respetaré. Gracias por leerme mi princesa. ❤️</p>
+      <footer>
+        <p class="small">Sea cual sea tu respuesta, la respetaré. Gracias por leerme. ❤️</p>
+      </footer>
+    </main>
   </div>
 </body>
 </html>
